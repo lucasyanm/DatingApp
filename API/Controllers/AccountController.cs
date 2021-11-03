@@ -43,6 +43,30 @@ namespace API.Controllers
             return l_User;
         }
 
+        [HttpPost("login")]
+        public async Task<ActionResult<AppUser>> Login(LoginDto a_LoginDto)
+        {
+            AppUser l_User = await _context.Users
+            //este metodo serve para, caso haja mais de um, da um trigger no erro
+                .SingleOrDefaultAsync(x => x.UserName == a_LoginDto.Username);
+
+            if(l_User == null) return Unauthorized("Invalid username");
+
+            using var l_Hashmac = new HMACSHA512(l_User.PasswordSalt);
+
+            byte[] l_ComputedHash = l_Hashmac.ComputeHash(
+                Encoding.UTF8.GetBytes(a_LoginDto.Password)
+            );
+
+            for(int i = 0; i < l_ComputedHash.Length; i++) 
+            {
+                if(l_ComputedHash[i] != l_User.PasswordHash[i])
+                    return Unauthorized("Invalid password");
+            }
+
+            return l_User;
+        }
+
         private async Task<bool> UserExists(string a_Username)
         {
             return await _context.Users
