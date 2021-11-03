@@ -8,6 +8,7 @@ using API.Entities;
 using System.Text;
 using System.Security.Cryptography;
 using API.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -22,12 +23,17 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<AppUser>> Register(RegisterDto a_User)
         {
+            if(await UserExists(a_User.Username)) 
+            {
+                return BadRequest("Username is taken");
+            }
+
             using var hashmac = new HMACSHA512();
 
             AppUser l_User = new AppUser(){
                 Id = Guid.NewGuid().ToString(),
-                UserName = a_User.username,
-                PasswordHash = hashmac.ComputeHash(Encoding.UTF8.GetBytes(a_User.password)),
+                UserName = a_User.Username.ToLower(),
+                PasswordHash = hashmac.ComputeHash(Encoding.UTF8.GetBytes(a_User.Password)),
                 PasswordSalt = hashmac.Key
             };
 
@@ -35,6 +41,12 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             
             return l_User;
+        }
+
+        private async Task<bool> UserExists(string a_Username)
+        {
+            return await _context.Users
+                .AnyAsync(x => x.UserName == a_Username.ToLower());
         }
     }
 }
