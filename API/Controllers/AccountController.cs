@@ -9,19 +9,22 @@ using System.Text;
 using System.Security.Cryptography;
 using API.DTOs;
 using Microsoft.EntityFrameworkCore;
+using API.Interfaces;
 
 namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-        public AccountController(DataContext context)
+        private readonly ITokenService _tokenService;
+        public AccountController(DataContext context, ITokenService tokenService)
         {
+            _tokenService = tokenService;
             _context = context;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<AppUser>> Register(RegisterDto a_User)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto a_User)
         {
             if(await UserExists(a_User.Username)) 
             {
@@ -40,11 +43,15 @@ namespace API.Controllers
             _context.Users.Add(l_User);
             await _context.SaveChangesAsync();
             
-            return l_User;
+            return new UserDto
+            {
+                Username = l_User.UserName,
+                Token = _tokenService.CreateToken(l_User)
+            };
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto a_LoginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto a_LoginDto)
         {
             AppUser l_User = await _context.Users
             //este metodo serve para, caso haja mais de um, da um trigger no erro
@@ -64,7 +71,11 @@ namespace API.Controllers
                     return Unauthorized("Invalid password");
             }
 
-            return l_User;
+            return new UserDto
+            {
+                Username = l_User.UserName,
+                Token = _tokenService.CreateToken(l_User)
+            };
         }
 
         private async Task<bool> UserExists(string a_Username)

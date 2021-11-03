@@ -56,3 +56,7 @@ C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\api\bin\Debu
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\api\bin\Debug\net5.0\Humanizer.dll
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
