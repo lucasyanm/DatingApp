@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v2gXLRXmGPDiJmUzeHds+j6WmG1Gzq+Nxzagn863TMpGRZxbzC/9+Y+FyPgcYiFbJlWY4uhA2jimOdIjRZQhxw==",
+  "dgSpecHash": "xqQdGiR2u3TUr3J02WzwaB9jLdBbu9QwV791rObTKfKLsr8jRB3JRq/E/ZQZnQAH9s0WbGinPag374LjHdaw2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\lucas.yan\\Documents\\Udemy\\Curso dotNet e Angular\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\lucas.yan\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\lucas.yan\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\lucas.yan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lucas.yan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lucas.yan\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\lucas.yan\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\lucas.yan\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
