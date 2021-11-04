@@ -60,3 +60,6 @@ C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debu
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\lucas.yan\Documents\Udemy\Curso dotNet e Angular\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
