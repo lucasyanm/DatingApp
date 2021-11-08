@@ -18,7 +18,7 @@ namespace API.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
+        [AllowAnonymous] //middelware
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {             
@@ -26,7 +26,7 @@ namespace API.Controllers
             return l_Users;
         }
 
-        [Authorize]
+        [Authorize] //middelware
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(Guid id)
         {

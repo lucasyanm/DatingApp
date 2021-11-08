@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dating App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav media-body mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Messages</a>
+          </li>
+        </ul>
+
+        <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle>Welcome User</a>
+          <div class="dropdown-menu mt-3" *dropdownMenu>
+            <a class="dropdown-item">
+              Edit Profile
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">
+              Logout
+            </a>
+          </div>
+        </div>
+
+        <!--parentesis in parameters (in angular) means that we are sending data
+            and brackets means that we are receiving data-->
+        <form #loginForm="ngForm" 
+              class="d-flex" 
+              (ngSubmit)="login()"
+              autocomplete="off"
+              *ngIf="(accountService.currentUser$ | async) === null">
+          <input name="username"
+                 [(ngModel)]="model.username"
+                 class="form-control me-2" 
+                 type="text" 
+                 placeholder="Username">
+          <input name="password"
+                 [(ngModel)]="model.password"
+                 class="form-control me-2" 
+                 type="password" 
+                 placeholder="Password">
+          <button class="btn btn-outline-success" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
