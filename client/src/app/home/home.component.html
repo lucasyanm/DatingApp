@@ -11,7 +11,9 @@
     <div *ngIf="registerMode" class="container">
         <div class="row justify-content-center">
             <div class="col-4">
-                <app-register></app-register>
+                <!--parentesis on component means that the child is sending data to parent
+                    and brackets means that the parent is sending data to child-->
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
             </div>
         </div>
     </div>

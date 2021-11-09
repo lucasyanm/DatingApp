@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../_models/user';
 
@@ -23,18 +23,33 @@ export class AccountService {
         const user = response;
         if(user)
         {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUserSource.next(user);
+          this.setCurrentUserAndSaveSection(user);
         }
       })
     );
   }
 
-  setCurrentUser(user: User){
+  register(model: any) {
+    return this.http.post(`${this.baseUrl}/account/register`, model).pipe(
+      map ((user: User) => {
+        if (user)
+        { 
+          this.setCurrentUserAndSaveSection(user);
+        }
+      })
+    )
+  }
+
+  setCurrentUserAndSaveSection(user: User): void {    
+    localStorage.setItem('user', JSON.stringify(user));
     this.currentUserSource.next(user);
   }
 
-  logout() {
+  setCurrentUser(user: User): void{
+    this.currentUserSource.next(user);
+  }
+
+  logout(): void{
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
   }

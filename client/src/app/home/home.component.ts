@@ -16,5 +16,19 @@ export class HomeComponent implements OnInit {
   registerToggle(){
     this.registerMode = !this.registerMode;
   }
+  
+  cancelRegisterMode(event: boolean){
+    this.registerMode = event;
+  }
+
+  // getUsers(){
+  //   this.http.get(`${this.apiUrl}/users`).subscribe(users => {
+  //     this.users = users;
+  //   }, error => {
+  //     console.error("Error to load users");
+  //     console.error(error);
+  //   }//"always" only needs to declare a arrow function without arguments () => {}
+  //   )
+  // }
 
 }

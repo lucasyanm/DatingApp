@@ -23,22 +23,11 @@ export class AppComponent implements OnInit{
   // data-bound properties change, and updates both the 
   // view and the component instance as needed. 
   ngOnInit() {
-    this.getUsers();
     this.setCurrentUser();
   }
 
   setCurrentUser() {
     const user: User = JSON.parse(localStorage.getItem('user'));
     this.accountService.setCurrentUser(user);
-  }
-
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe(response => {
-      this.users = response;
-    }, 
-    error => {
-      console.error(error);
-    }, //"always" only needs to declare a arrow function without arguments () => {}
-    )
   }
 }
