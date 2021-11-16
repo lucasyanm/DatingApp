@@ -51,12 +51,12 @@
               *ngIf="(accountService.currentUser$ | async) === null">
           <input name="username"
                  [(ngModel)]="model.username"
-                 class="form-control me-2" 
+                 class="form-control me-2 mr-2" 
                  type="text" 
                  placeholder="Username">
           <input name="password"
                  [(ngModel)]="model.password"
-                 class="form-control me-2" 
+                 class="form-control me-2 mr-2" 
                  type="password" 
                  placeholder="Password">
           <button class="btn btn-success" type="submit">Login</button>
