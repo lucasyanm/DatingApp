@@ -21,6 +21,7 @@
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bootstrap": "^4.5.3",
+    "bootswatch": "^5.1.3",
     "font-awesome": "^4.7.0",
     "mdn-polyfills": "^5.20.0",
     "ngx-bootstrap": "^7.1.0",
