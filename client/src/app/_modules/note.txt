@@ -1,0 +1,1 @@
+Modules is a way to compact the list of modules that is being used by the application in app.module
