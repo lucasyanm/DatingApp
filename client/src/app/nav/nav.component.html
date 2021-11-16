@@ -14,17 +14,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
         <ul class="navbar-nav media-body mb-2 mb-md-0">
-          <li class="nav-item">
-            <!--when the browser is on the url indicated by the routerLink, 
-                the class defined on the prop routerLinkActive will be setted on the tag-->
-            <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active" >Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/lists" routerLinkActive="active" >Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/messages" routerLinkActive="active" >Messages</a>
-          </li>
+          <ng-container *ngIf="accountService.currentUser$ | async">
+            <li class="nav-item">
+              <!--when the browser is on the url indicated by the routerLink, 
+                  the class defined on the prop routerLinkActive will be setted on the tag-->
+              <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active" >Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/lists" routerLinkActive="active" >Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/messages" routerLinkActive="active" >Messages</a>
+            </li>
+          </ng-container>
         </ul>
 
         <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
