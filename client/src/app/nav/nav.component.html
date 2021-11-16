@@ -1,21 +1,29 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dating App</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="/">Dating App</a>
+      <button class="navbar-toggler" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarCollapse" 
+              aria-controls="navbarCollapse" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
-        <ul class="navbar-nav media-body mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
+        <ul class="navbar-nav media-body mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Matches</a>
+            <!--when the browser is on the url indicated by the routerLink, 
+                the class defined on the prop routerLinkActive will be setted on the tag-->
+            <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active" >Matches</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
+            <a class="nav-link" routerLink="/lists" routerLinkActive="active" >Lists</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" routerLink="/messages" routerLinkActive="active" >Messages</a>
           </li>
         </ul>
 

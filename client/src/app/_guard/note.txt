@@ -1,0 +1,2 @@
+Guard is like a middleware that you can permit or not the user to access an url based on rules
+You can add them by passing in the app-routing module inside the route you want to validate

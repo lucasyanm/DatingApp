@@ -24,6 +24,7 @@
     "font-awesome": "^4.7.0",
     "mdn-polyfills": "^5.20.0",
     "ngx-bootstrap": "^7.1.0",
+    "ngx-toastr": "^14.1.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
